@@ -35,7 +35,7 @@ INSERT_CONTENT=$(cat << EOF
 
     LOG_OUT "[广告过滤规则拉取脚本] 拉取最新的 anti-AD 广告过滤规则，规则体积较大，请耐心等候…"
     mkdir -p /tmp/dnsmasq.d
-    curl -sSL -4 --retry 5 --retry-delay 1 "https://github.boki.moe.com/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf" -o /tmp/dnsmasq.d/anti-ad-for-dnsmasq.conf 2> /tmp/anti-ad-curl.log
+    curl -sSL -4 --retry 5 --retry-delay 1  "https://github.boki.moe.com/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf" -o /tmp/dnsmasq.d/anti-ad-for-dnsmasq.conf 2> /tmp/anti-ad-curl.log
 
     if [ $? -eq 0 ]; then
         LOG_OUT "[广告过滤规则拉取脚本] anti-AD 规则拉取成功！"
@@ -43,10 +43,14 @@ INSERT_CONTENT=$(cat << EOF
         LOG_OUT "[广告过滤规则拉取脚本] anti-AD 规则拉取失败，查看 /tmp/anti-ad-curl.log 获取详细信息。"
     fi
 
+    sed -i '/^$/d' /etc/hosts
+    sed -i '/!/d' /etc/hosts
+
     LOG_OUT "[广告过滤规则拉取脚本] 清理 DNS 缓存…"
     /etc/init.d/dnsmasq stop
     /etc/init.d/dnsmasq start
     LOG_OUT "[广告过滤规则拉取脚本] 脚本运行完毕！"
+
 ) &
 # ==============广告过滤规则拉取脚本结束==============
 EOF
