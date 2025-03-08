@@ -50,7 +50,17 @@ curl -sSL -4 https://gh-proxy.com/https://raw.githubusercontent.com/Aethersailor
 ```bash
 curl -sSL -4 https://gh-proxy.com/https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/shell/install_openclash_dev_update_geo.sh | sh
 ```
+***
 
+## **一键写入“开发者选项”中的去广告命令（anti-AD 广告过滤规则 + Github520 加速规则）**  
+
+**edit_custom_firewall_rules_anti-adn+github520.sh**  
+
+```bash
+curl -sSL -4 https://raw.githubusercontent.com/jscntw/Custom_OpenClash_Rules/refs/heads/main/shell/edit_custom_firewall_rules_anti-adn.sh | sh
+```
+
+***
 ***
 
 ## **一键写入“开发者选项”中的去广告命令（anti-AD 广告过滤规则 + Github520 加速规则）**  
