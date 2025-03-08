@@ -52,12 +52,12 @@ curl -sSL -4 https://gh-proxy.com/https://raw.githubusercontent.com/Aethersailor
 ```
 ***
 
-## **一键写入“开发者选项”中的去广告命令（anti-AD 广告过滤规则）**  
+## **手动选择**  
 
 **edit_custom_firewall_rules_anti-adn+github520.sh**  
 
 ```bash
-curl -sSL -4 https://raw.githubusercontent.com/jscntw/Custom_OpenClash_Rules/refs/heads/main/shell/edit_custom_firewall_rules_anti-ad.sh | sh
+curl -sSL https://github.boki.moe/https://raw.githubusercontent.com/jscntw/Custom_OpenClash_Rules/refs/heads/main/shell/edit_custom_firewall_rules.sh -o edit_custom_firewall_rules.sh && chmod +x edit_custom_firewall_rules.sh && ./edit_custom_firewall_rules.sh
 ```
 
 ***
